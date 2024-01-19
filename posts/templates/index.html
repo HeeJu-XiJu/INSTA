@@ -1,3 +1,7 @@
-{% for post in posts %}
-	{% include '_card.html' %}
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block body %}
+	{% for post in posts %}
+		{% include '_card.html' %}
+	{% endfor %}
+{% endblock %}
