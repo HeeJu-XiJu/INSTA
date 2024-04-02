@@ -1,5 +1,9 @@
 <div class="card my-3 col-12 col-md-5 mx-2">
-    <div class="card-header">작성자</div>
+    <div class="card-header" style="display: flex; align-items: center;">
+        <span style="flex-grow: 1;">작성자</span>
+        <a class='btn btn-secondary' style="float:right" href="{% url 'posts:delete' id=post.id %}">DELETE</a>
+    </div>
+    
     <img src="{{ post.image.url }}" alt="">
     <div class="card-body">
         <p class="'card-text">{{ post.content }}</p>

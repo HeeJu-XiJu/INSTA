@@ -24,3 +24,10 @@ def create(request):
         'form': form,
     }
     return render(request, 'form.html', context)
+
+
+def delete(request, id):
+    post = Post.objects.get(id=id)
+    post.delete()
+
+    return redirect('posts:index')
