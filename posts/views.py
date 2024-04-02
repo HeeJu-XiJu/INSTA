@@ -31,3 +31,21 @@ def delete(request, id):
     post.delete()
 
     return redirect('posts:index')
+
+
+def update(request, id):
+    post = Post.objects.get(id=id)
+    
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('posts:index')
+    else:
+        form = PostForm(instance=post)
+    
+    context = {
+        'form' : form,
+    }
+
+    return render(request, 'form.html', context)

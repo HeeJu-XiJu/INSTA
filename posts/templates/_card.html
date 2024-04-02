@@ -2,6 +2,7 @@
     <div class="card-header" style="display: flex; align-items: center;">
         <span style="flex-grow: 1;">작성자</span>
         <a class='btn btn-secondary' style="float:right" href="{% url 'posts:delete' id=post.id %}">DELETE</a>
+        <a class='btn btn-secondary' style="float:right" href="{% url 'posts:update' id=post.id %}">UPDATE</a>
     </div>
     
     <img src="{{ post.image.url }}" alt="">
